@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello World: JavaScript Functions and Events</title>
+    <script src="hello_world.js"></script>
+    <script>
+      function localFunction() {
+        document.getElementById("item1").innerHTML = "<h2>Hello World</h2>";
+        console.log(event.target);
+      }
+      function localFunction2() {
+        document.getElementById("item1").innerHTML = "<h2>Good Morning</h2>";
+        console.log(event.target);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Hello World: JavaScript Functions</h1>
+    <p>
+      The localFunction is called when you click the button. This inserts text into the
+      element with the id "item1".
+    </p>
+    <p>
+      The web page does not containt any text at start. If you check the Source you will see teh original sorce with the element item.
+      Using Inspect, you could see that the HTLM is reflecting current DOM, and the text wiil be there!
+    </p>
+    <p>
+      <button onclick="localFunction()">Click button 1</button>
+    </p>
+    <p>
+      <button onclick="localFunction2()">Click button 2</button>
+    </p>
+    <div id="item1"></div>
+  </body>
+</html>
