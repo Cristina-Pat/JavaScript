@@ -1,0 +1,42 @@
+a {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+body {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+div {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+form {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+input {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+p {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+h1 {
+    display: inline;
+}
