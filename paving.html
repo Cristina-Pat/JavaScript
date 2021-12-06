@@ -23,12 +23,58 @@
             <span>Pack cost £50.10</span>
             <br />
             <span>Each pack includes: 100mm x 100mm - 1000 pieces per pack</span>
-          </p>
-          <form method="POST" action="http://students.open.ac.uk/mct/tt284/reflect/reflect.php">
+        </p>
+        
+        <form method="POST" action="http://students.open.ac.uk/mct/tt284/reflect/reflect.php">
             <label for = "msquared">
               Type in your paving area in m<sup>2</sup> required:
               <input type="text" name="msquared" id="msquared" size = "3" required minlength="1" maxlength="4" />
             </label>
+            <input type="hidden" name="stonetype" value="PatStone" />
+            <input type="button" value="Calculate order" onclick="calculateOrder()" />
+            <p>Your order description is:</p>
+            <p>Packs required = <span id="packs"></span></p>
+            <p>Cost of packs = <span id="cost"></span></p>
+            <p>Value added tax = <span id="vat"></span></p>
+            <p>Delivery charge = <span id="delivery"></span></p>
+            <p>Total = <span id="total"></span></p>
+            <input type="submit" name="task" value="Submit order" />
+            <button type="button" onclick="logSiblingSpanElements(event.target)">
+                Log sibling span elements to console
+            </button>
+        </form> 
+
+        <script>
+            "use strict";
+            function calculateOrder() {
+              // define constant values (matching those in HTML above)
+              var packArea = 10;
+              var packCost = 50.10;
+              var vatRate = 0.2;
+              var delivery = 55;
+              // calculate costs
+              var inputElement = document.getElementById("msquared");
+              var area = Number(inputElement.value);
+              // check the given value is a number and warn if not
+              if (isNaN(area)) {
+                alert("Area must be a number of square metres");
+              } else {
+                // continue with calculation and report
+                var packs = Math.ceil(area / packArea);
+                var cost = packs * packCost;
+                var vat = cost * vatRate;
+                var total = cost + vat + delivery;
+                // report results
+                document.getElementById("packs").innerText = packs;
+                document.getElementById("cost").innerText = "£" + cost.toFixed(2);
+                document.getElementById("vat").innerText = "£" + vat.toFixed(2);
+                document.getElementById("delivery").innerText = "£" + delivery;
+                document.getElementById("total").innerText = "£" + total.toFixed(2);
+              }
+            }
+          </script>
+
+            <!--Add an email address for a custom offer -->
     </body>
 
 </html>
