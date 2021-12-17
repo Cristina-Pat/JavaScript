@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions, objects and methods in JavaScript </title>
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        var aList = new Array(12, 15, 99, 3); // list == array
+
+        document.write('the value in cell 1 is now: ' + aList[0] + '<br />');
+        aList[0] += 1; // increase the first element to 13
+        document.write('the new value in cell 1 is: ' + aList[0] + '<br />');
+        document.write(aList.length);
+
+        function displayArray(aList) {
+            for (var i = 0; i < aList.length; i++) {
+                var div = document.createElement("div"); //create a new <div> element
+                div.innerText = " The " + i + " number in list is " + aList[i] + "."; // insert text
+                document.body.appendChild(div); //append <div> to <body>
+            }
+        }
+
+        displayArray(aList);
+
+        var newList = new Array(0, 3);
+        displayArray(newList);
+
+        var expr = "1 != 0";
+
+        function evaluateExpression(expr) {
+            if (eval(expr)) {
+                var newDiv = document.createElement("div");
+                newDiv.innerText = "The expresion is true!";
+                document.body.appendChild(newDiv);
+            }
+            else {
+                var newDiv = document.createElement("div");
+                newDiv.innerText = "The expresion is false!";
+                document.body.appendChild(newDiv);
+            }
+        }
+        evaluateExpression(expr);
+
+        var newExpr = "3 < 2";
+        evaluateExpression(newExpr);
+
+        var cris_pat = { //object == dictionary
+            'Name': 'Cristina',
+            'Surname': 'Pat',
+        }
+        cris_pat.Age = 35;
+
+        function displayObjectsAttribute(dict) {
+            for (var i in dict) {
+                var div = document.createElement("div"); //create a new <div> element
+                div.innerText = "The property is " + i + " and the value is " + dict[i] + ".";// insert text
+                document.body.appendChild(div); //append <div> to <body>
+            }
+        }
+
+        displayObjectsAttribute(cris_pat);
+
+        var number = 3;
+        document.write('The first number is ' + number + '.<br />');
+
+        function incNumber(a) {
+            a++;
+            return a;
+        }
+        number += 2;
+
+        document.write('The second number is ' + number + '.<br />');
+
+        number = incNumber(number); // asign the return value to variable number
+        document.write('The third number is ' + number + '.<br />');
+
+
+        function Employee(aName, aSurname, anAge, aNumKids) {
+            this.Name = aName;
+            this.Surname = aSurname;
+            this.Age = anAge;
+            this.NumKids = aNumKids;
+
+            this.hasKids = function () {
+                return this.Name + ' has ' + this.NumKids + '!';
+            }
+        }
+
+        var raz_pat = new Employee('Razvan', 'Pat', '36', '0');
+        var alex_sterie = new Employee('Alexandru', 'Sterie', '31', '1');
+
+    </script>
+
+</body>
+
+</html>
